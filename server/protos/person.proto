@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package person;
+
+
+// The greeting service definition.
+service Person {
+    // Client opens a stream with the server and reads its messages
+    rpc GetPersonDetail(GetPersonMessage) returns (PersonDetail) {}
+  }
+  
+  // The request message containing the user's name.
+  message GetPersonMessage {
+    string personId = 1;
+  }
+  
+  // The response message containing the greetings
+  message PersonDetail {
+    string name = 1;
+  }
